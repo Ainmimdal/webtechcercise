@@ -1,0 +1,124 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+
+.kafeel-container {
+    display: flex;
+    max-width: 800px;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding:5px
+}
+
+
+.kafeel-header {
+    background-color: #009688;
+    color: white;
+    padding: 2rem;
+    width: 40%;
+    min-height: 500px;
+}
+
+.kafeel-header p {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+.kafeel-body {
+    padding: 2rem;
+    width: 60%;
+}
+
+.kafeel-label {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+
+.kafeel-options {
+    padding: 0.5rem 2rem;
+    border: none;
+    background: #f5f5f5;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.option-selected {
+    background-color: #009688;
+    color: white;
+}
+
+
+.kafeel-items {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    margin: 0.5rem;
+    width: calc(50% - 1rem);
+}
+
+.kafeel-items.email {
+    width: calc(100% - 1rem);
+}
+
+#kafeel-sponsor-text {
+    width: calc(100% - 3rem);
+    margin-left: 0.5rem;
+}
+
+.label-text {
+    display: flex;
+    align-items: center;
+}
+
+.kafeel-sponsor-label {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Sponsor button styles */
+.kafeel-btn-sponsor {
+    width: 100%;
+    padding: 1rem;
+    background-color: #ffc107;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+
+@media (max-width: 768px) {
+    .kafeel-container {
+        flex-direction: column;
+    }
+    
+    .kafeel-header {
+        width: 100%;
+        min-height: auto;
+    }
+    
+    .kafeel-body {
+        width: 100%;
+    }
+    
+    .kafeel-items {
+        width: 100%;
+    }
+}
