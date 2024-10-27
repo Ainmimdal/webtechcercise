@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <form id="loginForm" onsubmit="return validateForm(event)">
+        <fieldset>
+            <legend>Login</legend>
+            
+            Name: <span>*</span>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+            
+            Password: <span>*</span>
+            <input type="password" id="password" name="password" required>
+            <br><br>
+            <span id="passwordError" style="color: red; display: none;"></span>
+            
+            <input type="reset" value="Reset">
+            <input type="submit" value="Login">
+        </fieldset>
+    </form>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            
+            const password = document.getElementById('password').value;
+            const passwordError = document.getElementById('passwordError');
+            
+            const hasDigit = /[0-9]/.test(password);
+            const hasSpecialChar = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password);
+            const correctLength = password.length >= 8 && password.length <= 20;
+            
+            let errorMessage = [];
+            
+            if (!hasDigit) {
+                errorMessage.push("Must contain at least one digit (0-9)");
+            }
+            if (!hasSpecialChar) {
+                errorMessage.push("Must contain at least one special character");
+            }
+            if (!correctLength) {
+                errorMessage.push("Must be between 8 and 20 characters");
+            }
+            
+            if (errorMessage.length > 0) {
+                passwordError.textContent = errorMessage.join(", ");
+                passwordError.style.display = "block";
+                return false;
+            }
+            
+            passwordError.style.display = "none";
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+</body>
+</html>
