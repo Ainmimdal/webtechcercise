@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favourite Pets</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .pet-list li {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Favourite Pets</h1>
+    <ul class="pet-list">
+        <li id="cat">Cat</li>
+        <li id="goldfish">Goldfish</li>
+        <li id="iguana">Iguana</li>
+    </ul>
+    <a href="#" id="click-me">Click Me!</a>
+
+    <script>
+        $(document).ready(function() {
+            $('#click-me').click(function() {
+                $('#goldfish').css('color', 'yellow');
+                $('#cat, #iguana').css('color', 'green');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initialscale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="int1">Enter your first integer </label>
+    <input type="text" name="int1" id="int1">
+    <br>
+    <label for="int2">Enter your second integer</label>
+    <input type="text" name="int2" id="int2">
+    <br>
+    <!--inline eventhandler-->
+    <button type="button" onclick="addIntegers()">Add</button>
+    <br>
+    <button type="button" 
+    onclick="alert('Hellloooo')">Say Hello</button>
+    <br>
+    <button type="button" 
+    onclick="prompt('Enter an integer value')">Prompt User</button>
+    <p id="result"></p>
+    <script>
+        function addIntegers() {
+
+            let num1 = Number(document.getElementById("int1").value);
+            //convert from text value to number value
+            //parseInt(document.getElementById("int1").value);
+            //parseFloat(document.getElementById("int1").value);
+            let num2 = Number(document.getElementById("int2").value);
+            
+            let add = num1 + num2;
+            
+            document.getElementById("result").innerHTML =
+                num1 + " + " + num2 + " = " + add;
+        }
+    </script>
+</body>
+
+</html>

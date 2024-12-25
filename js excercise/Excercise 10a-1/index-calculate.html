@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initialscale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="int1">Enter your first integer </label>
+    <input type="text" name="int1" id="int1">
+    <br>
+    <label for="int2">Enter your second integer</label>
+    <input type="text" name="int2" id="int2">
+    <br>
+    
+    <button type="button" id="btn1">Add</button>
+    <button type="button" id="btn2">Subtract</button>
+    <button type="button" id="btn3">Multiply</button>
+    <button type="button" id="btn4">Division</button>
+
+    <br>
+    <p id="result"></p>
+    <script>
+
+        const btn1 = document.querySelector('#btn1');
+        const btn2 = document.querySelector('#btn2');
+        const btn3 = document.querySelector('#btn3');
+        const btn4 = document.querySelector('#btn4');
+        
+        function addIntegers() {
+            let num1 = Number(document.getElementById("int1").value);
+            let num2 = Number(document.getElementById("int2").value);
+            
+            let add = num1 + num2;
+            
+            document.getElementById("result").textContent =
+                num1 + " + " + num2 + " = " + add;
+        }
+
+        
+        function subIntegers() {
+            let num1 = Number(document.getElementById("int1").value);
+            let num2 = Number(document.getElementById("int2").value);
+            
+            let sub = num1 - num2;
+            
+            document.getElementById("result").textContent =
+                num1 + " -" + num2 + " = " + sub;
+        }
+
+        function mulIntegers() {
+            let num1 = Number(document.getElementById("int1").value);
+            let num2 = Number(document.getElementById("int2").value);
+            
+            let mul = num1 * num2;
+            
+            document.getElementById("result").textContent =
+                num1 + " * " + num2 + " = " + mul;
+        }
+
+        function divIntegers() {
+            let num1 = Number(document.getElementById("int1").value);
+            let num2 = Number(document.getElementById("int2").value);
+            
+            let div = num1 / num2;
+  
+            
+            document.getElementById("result").textContent =
+                num1 + " / " + num2 + " = " + div;
+        }
+
+        btn1.addEventListener('click', addIntegers);
+        btn2.addEventListener('click', subIntegers);
+        btn3.addEventListener('click', mulIntegers);
+        btn4.addEventListener('click', divIntegers);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding Two Integers</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+</head>
+
+<body>
+    <label for="int1">Enter integer x </label>
+    <input type="text" name="int1" id="int1">
+    <br>
+    <label for="int2">Enter integer y </label>
+    <input type="text" name="int2" id="int2">
+    <br>
+    <button type="button" id="addButton">Add</button>
+    <br>
+    <p id="result"></p>
+
+    <script>
+        $(document).ready(function () {
+      
+            $('#addButton').click(function () {
+            
+                let num1 = Number($('#int1').val());
+                let num2 = Number($('#int2').val()); 
+                
+                let sum = num1 + num2;
+                
+                $('#result').html("The value of x + y is " + sum);
+            });
+        });
+    </script>
+</body>
+
+</html>

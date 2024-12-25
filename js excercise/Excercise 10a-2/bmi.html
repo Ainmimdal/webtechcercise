@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+
+<body>
+    <h1>BMI Calculator</h1>
+    
+    <!-- Inputs for height and weight -->
+    <label for="height">Enter your height (m): </label>
+    <input type="text" id="height" name="height">
+    <br><br>
+    <label for="weight">Enter your weight (kg): </label>
+    <input type="text" id="weight" name="weight">
+    <br><br>
+    
+    <!-- Button to calculate BMI -->
+    <button type="button" id="calculateBMI">Calculate BMI</button>
+    <br><br>
+
+    <!-- Paragraph to display results -->
+    <p id="bmiResult"></p>
+
+    <script>
+        // Function to calculate BMI and display results
+        function calculateBMI() {
+            // Retrieve height and weight inputs
+            const height = parseFloat(document.getElementById("height").value);
+            const weight = parseFloat(document.getElementById("weight").value);
+
+            // Validate inputs
+            if (isNaN(height) || height <= 0) {
+                document.getElementById("bmiResult").textContent = "Please enter a valid height.";
+                return;
+            }
+            if (isNaN(weight) || weight <= 0) {
+                document.getElementById("bmiResult").textContent = "Please enter a valid weight.";
+                return;
+            }
+
+            // Calculate BMI
+            const bmi = weight / (height * height);
+
+            // Determine BMI category and display message
+            let message;
+            if (bmi < 18) {
+                message = `Your BMI is ${bmi.toFixed(1)}.<br>You are underweight.`;
+            } else if (bmi >= 18 && bmi <= 25) {
+                message = `Your BMI is ${bmi.toFixed(1)}.<br>You have a normal weight.`;
+            } else {
+                message = `Your BMI is ${bmi.toFixed(1)}.<br>You are overweight.`;
+            }
+
+            // Display the result
+            document.getElementById("bmiResult").innerHTML = message;
+        }
+
+        // Add event listener to the button
+        document.getElementById("calculateBMI").addEventListener("click", calculateBMI);
+    </script>
+</body>
+
+</html>

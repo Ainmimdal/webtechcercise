@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Super Hero Squad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        label {
+            font-size: 16px;
+        }
+
+        input {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Super Hero Squad</h1>
+
+    <label>Enter member name</label>
+    <input type="text" id="memberInput">
+    <button onclick="checkAccess()">Submit</button>
+
+    <p id="output"></p>
+
+    <script>
+        var obj = JSON.parse('{"squad name": "Super hero squad","hometown": "Metro City","members": [{ "member name": "Molecule Man","secret identity": "Dan Jukes"},{ "member name": "Madame Uppercut","secret identity": "Jane Wilson"}]}');
+
+        function checkAccess() {
+            var inputName = document.getElementById("memberInput").value.trim(); // Get input and trim whitespace
+            var message = "Access denied"; // Default message
+
+            // Check if input matches allowed names
+            if (inputName === "Molecule Man" || inputName === "Madame Undercut") {
+                message = "Welcome Super hero squad!";
+            }
+
+            document.getElementById("output").innerText = message;
+        }
+    </script>
+
+</body>
+
+</html>
